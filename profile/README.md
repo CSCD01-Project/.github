@@ -29,7 +29,7 @@ Each repository is independent, uses **Poetry** for dependency management, and c
 
 ## Project Setup
 
-Setup instructions can be found in [SETUP.md](./SETUP.md).
+Setup instructions can be found in [SETUP.md](../SETUP.md).
 
 ---
 

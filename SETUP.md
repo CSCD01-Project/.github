@@ -7,7 +7,7 @@ This guide is for setting up the development environment for the Cloudflare D1 D
 This project assumes you already have `poetry` and `pyenv` with python `3.11.13` installed. If not:
 
 ##### [PyEnv Install Instructions](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation)
-##### Install correct python version
+##### Install Python 3.11.13
 ```bash
 pyenv install 3.11.13
 ```
@@ -15,7 +15,8 @@ pyenv install 3.11.13
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
 exec $SHELL
-poetry --version ```
+poetry --version
+```
 
 ---
 
@@ -35,7 +36,7 @@ After this, all repositories will live under this folder.
 
 ### 1.5 Setup Script
 
-The setup script found in [SETUP.sh](./SETUP.sh) will automatically execute steps 2-6 **in the current working directory**. It requires you to:
+The setup script found in [setup.sh](./setup.sh) will automatically execute steps 2-6 **in the current working directory**. It requires you to:
 1. Have CLI logged into github with ssh access set up (`git clone git@github.com:...` works)
 2. Have all dependencies in step 0 installed.
 
@@ -63,9 +64,9 @@ Directory structure after cloning:
 
 ```
 d01-project/
- ├── superset-engine-d1/
  ├── dbapi-d1/
- └── sqlalchemy-d1/
+ ├── sqlalchemy-d1/
+ └── superset-engine-d1/
 ```
 
 ---
@@ -75,14 +76,13 @@ d01-project/
 For each repository:
 
 ```bash
-cd ~/dev/d01-project/dbapi-d1
+cd dbapi-d1
 poetry env activate
 poetry install
 
 cd ../sqlalchemy-d1
 poetry env activate
 poetry install
-poetry build
 
 cd ../superset-engine-d1
 poetry env activate
